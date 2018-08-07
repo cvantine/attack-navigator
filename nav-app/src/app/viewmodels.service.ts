@@ -1011,6 +1011,7 @@ export class TechniqueVM {
     color: string = ""; //manually assigned color-class name
     enabled: boolean = true;
     comment: string = ""
+    metadata: string = "TEST"
 
     //print this object to the console
     print(): void {

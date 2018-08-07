@@ -568,6 +568,9 @@
         <div class="comment" [id]="'comment'+viewModel.uid" *ngIf="viewModel.getTechniqueVM(viewModel.highlightedTechnique.technique_tactic_union_id).comment">
             <b>Comment:</b> {{viewModel.getTechniqueVM(viewModel.highlightedTechnique.technique_tactic_union_id).comment}}
         </div>
+        <div class="comment" [id]="'metadata'+viewModel.uid" *ngIf="viewModel.getTechniqueVM(viewModel.highlightedTechnique.technique_tactic_union_id).metadata">
+            <b>Metadata:</b> {{viewModel.getTechniqueVM(viewModel.highlightedTechnique.technique_tactic_union_id).metadata}}
+        </div>
         <div class="comment-overflow-note" *ngIf="toolTipOverflows">
             ...
         </div>
