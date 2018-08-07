@@ -1011,7 +1011,7 @@ export class TechniqueVM {
     color: string = ""; //manually assigned color-class name
     enabled: boolean = true;
     comment: string = ""
-    metadata: string = "TEST"
+    metadata: string = ""
 
     //print this object to the console
     print(): void {
@@ -1039,6 +1039,7 @@ export class TechniqueVM {
         rep.color = this.color;
         rep.comment = this.comment;
         rep.enabled = this.enabled;
+        rep.metadata = this.metadata;
         //rep.technique_tactic_union_id = this.technique_tactic_union_id;
         //console.log(rep);
         return JSON.stringify(rep, null, "\t")
@@ -1059,6 +1060,10 @@ export class TechniqueVM {
         if ("comment" in obj) {
             if (typeof(obj.comment) === "string") this.comment = obj.comment;
             else console.error("TypeError: technique comment field is not a number:", obj.comment, "(",typeof(obj.comment),")")
+        }
+        if ("metadata" in obj) {
+            if (typeof(obj.metadata) === "string") this.metadata = obj.metadata;
+            else console.error("TypeError: technique metadata field is not a number:", obj.metadata, "(",typeof(obj.metadata),")")
         }
         if ("color" in obj && obj.color !== "") {
             if (typeof(obj.color) === "string" && tinycolor(obj.color).isValid()) this.color = obj.color;
